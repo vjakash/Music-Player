@@ -47,7 +47,6 @@ function add() {
   let song = new songs();
   song.songName = (<HTMLInputElement>document.getElementById("songName")).value;
   song.artist = (<HTMLInputElement>document.getElementById("artistName")).value;
-  artist = new artists(song.artist);
   song.genre = (<HTMLInputElement>document.getElementById("genre")).value;
   song.musicDirector = (<HTMLInputElement>(
     document.getElementById("musicDirectorName")
@@ -62,6 +61,8 @@ function add() {
       english.addSong(song);
       break;
   }
+  artist = new artists(song.artist);
+
   (<HTMLInputElement>document.getElementById("songName")).value = "";
   (<HTMLInputElement>document.getElementById("artistName")).value = "";
   (<HTMLInputElement>document.getElementById("genre")).value = "";
@@ -81,13 +82,10 @@ function updatePlayList() {
       }
       tamil.playListSongs.forEach((item) => {
           let arg=JSON.stringify(item);
-        let div1 = document.createElement("div");
-        div1.setAttribute("class", "row");
-        div1.innerHTML += `&emsp;<div class='col-lg-10 text-left text-capitalize'>${item.songName}</div>
-                            <div class='col-lg-2 text-left'><button class='btn btn-dark' onclick='play(${arg})' style="height:2vw;"><span class="material-icons">
-                            play_circle_outline
-                            </span></button></div> `;
-        displayDiv.appendChild(div1);
+          displayDiv.innerHTML += `<div class="row " >&emsp;<div class='col-8 col-lg-8 text-left text-capitalize'>${item.songName}</div>
+          <div class= 'col-3 col-lg-3 text-left'><button class='btn btn-light' onclick='play(${arg})' style="height:2.5em;"><span class="material-icons" style="font-size:2em;">
+          play_circle_outline
+          </span></button></div> </div><br>`;
       });
       break;
     case "English":
