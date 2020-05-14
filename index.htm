@@ -73,7 +73,7 @@
                                 <input type="text" class="form-control" id="albumName">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="playlist">Play List</label>
+                                <label for="playlist">Language</label>
                                 <select id="playlist" class="form-control">
                                 <option value="Tamil" selected>Tamil</option>
                                 <option value="English">English</option>
@@ -95,24 +95,24 @@
                         <div class="row ">
                             <div class="col-lg-12 text-center">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="artist" />
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="artists" onclick="changeSelect(this.value)" />
                                     <label class="form-check-label" for="inlineRadio1">Artist</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="musicDirector" />
-                                    <label class="form-check-label" for="inlineRadio2">Music Director</label>
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="musicDirector" onclick="changeSelect(this.value)" />
+                                    <label class="form-check-label" for="inlineRadio2 ">Music Director</label>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input active" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="playList" checked="" />
-                                    <label class="form-check-label" for="inlineRadio3">Language</label>
+                                <div class="form-check form-check-inline ">
+                                    <input class="form-check-input active" type="radio" name="inlineRadioOptions" id="inlineRadio3 " checked="checked" value="languages" onclick="changeSelect(this.value) " />
+                                    <label class="form-check-label" for="inlineRadio3 ">Language</label>
                                 </div>
                             </div>
                         </div>
 
                         <br>
-                        <div class="row " id="selection">
-                            <div class="col-lg-12 text-center">
-                                <select class="custom-select" id="list" onchange="updatePlayList()" style="width: 80%;">
+                        <div class="row " id="selection ">
+                            <div class="col-lg-12 text-center ">
+                                <select class="custom-select " id="list" onchange="updatePlayList() " style="width: 80%; ">
                                     <option value="Tamil" selected>Tamil</option>
                                     <option value="English">English</option>
                                     
@@ -124,8 +124,8 @@
                     </div>
                 </div>
                 <br>
-                <div class="row border-bottom border-left border-right border-white ml-1" style="width: 98%;">
-                    <div class="col-lg-12 text-center" id="listedSongs">
+                <div class="row border-bottom border-left border-right border-white ml-1 " style="width: 98%; ">
+                    <div class="col-lg-12 text-center " id="listedSongs">
                         No Songs in the list
                     </div>
                 </div>
@@ -134,7 +134,7 @@
         <br>
     </div>
     </div>
-    <script src="idex.js"></script>
+    <script src="idex.js "></script>
 </body>
 
 </html>
