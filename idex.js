@@ -40,7 +40,6 @@ function add() {
     var song = new songs();
     song.songName = document.getElementById("songName").value;
     song.artist = document.getElementById("artistName").value;
-    artist = new artists(song.artist);
     song.genre = document.getElementById("genre").value;
     song.musicDirector = (document.getElementById("musicDirectorName")).value;
     song.url = document.getElementById("url").value;
@@ -53,6 +52,7 @@ function add() {
             english.addSong(song);
             break;
     }
+    artist = new artists(song.artist);
     document.getElementById("songName").value = "";
     document.getElementById("artistName").value = "";
     document.getElementById("genre").value = "";
@@ -72,10 +72,7 @@ function updatePlayList() {
             }
             tamil.playListSongs.forEach(function (item) {
                 var arg = JSON.stringify(item);
-                var div1 = document.createElement("div");
-                div1.setAttribute("class", "row");
-                div1.innerHTML += "&emsp;<div class='col-lg-10 text-left text-capitalize'>" + item.songName + "</div>\n                            <div class='col-lg-2 text-left'><button class='btn btn-dark' onclick='play(" + arg + ")' style=\"height:2vw;\"><span class=\"material-icons\">\n                            play_circle_outline\n                            </span></button></div> ";
-                displayDiv.appendChild(div1);
+                displayDiv.innerHTML += "<div class=\"row \" >&emsp;<div class='col-8 col-lg-8 text-left text-capitalize'>" + item.songName + "</div>\n          <div class= 'col-3 col-lg-3 text-left'><button class='btn btn-light' onclick='play(" + arg + ")' style=\"height:2.5em;\"><span class=\"material-icons\" style=\"font-size:2em;\">\n          play_circle_outline\n          </span></button></div> </div><br>";
             });
             break;
         case "English":
