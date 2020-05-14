@@ -37,6 +37,52 @@
     </div>
     <div class="container-fluid  bg-dark text-white">
         <div class="row">
+            <div class="col-lg-3 bg-dark text-white ">
+                <br>
+                <div class="row border-top border-left border-right border-white ml-1" style="width: 98%;">
+                    <div class="col-lg-12 text-center">
+                        <div class="row ">
+                            <div class="col-lg-12 text-center">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="artists" onclick="changeSelect(this.value)" />
+                                    <label class="form-check-label" for="inlineRadio1">Artist</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="musicDirector" onclick="changeSelect(this.value)" />
+                                    <label class="form-check-label" for="inlineRadio2 ">Music Director</label>
+                                </div>
+                                <div class="form-check form-check-inline ">
+                                    <input class="form-check-input active" type="radio" name="inlineRadioOptions" id="inlineRadio3 " checked="checked" value="languages" onclick="changeSelect(this.value) " />
+                                    <label class="form-check-label" for="inlineRadio3 ">Language</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row " id="selection ">
+                            <div class="col-lg-12 text-center ">
+                                <select class="custom-select " id="list" onchange="updatePlayList() " style="width: 80%; ">
+                                    <option value="Tamil" selected>Tamil</option>
+                                    <option value="English">English</option>
+                                    
+                                  </select>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+                <div class="row border-bottom border-left border-right border-white ml-1 " style="width: 98%; ">
+                    <div class="col-lg-12 text-center " id="listedSongs">
+                        No Songs in the list
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6" id="player">
+
+            </div>
             <div class="col-lg-3 ">
                 <br>
                 <form onsubmit="add();return false;">
@@ -85,51 +131,6 @@
                         <button type="submit" class="btn btn-light">Add Song</button>
                     </fieldset>
                 </form>
-            </div>
-            <div class="col-lg-6" id="player">
-
-            </div>
-            <div class="col-lg-3 bg-dark text-white ">
-                <br>
-                <div class="row border-top border-left border-right border-white ml-1" style="width: 98%;">
-                    <div class="col-lg-12 text-center">
-                        <div class="row ">
-                            <div class="col-lg-12 text-center">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="artists" onclick="changeSelect(this.value)" />
-                                    <label class="form-check-label" for="inlineRadio1">Artist</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="musicDirector" onclick="changeSelect(this.value)" />
-                                    <label class="form-check-label" for="inlineRadio2 ">Music Director</label>
-                                </div>
-                                <div class="form-check form-check-inline ">
-                                    <input class="form-check-input active" type="radio" name="inlineRadioOptions" id="inlineRadio3 " checked="checked" value="languages" onclick="changeSelect(this.value) " />
-                                    <label class="form-check-label" for="inlineRadio3 ">Language</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <br>
-                        <div class="row " id="selection ">
-                            <div class="col-lg-12 text-center ">
-                                <select class="custom-select " id="list" onchange="updatePlayList() " style="width: 80%; ">
-                                    <option value="Tamil" selected>Tamil</option>
-                                    <option value="English">English</option>
-                                    
-                                  </select>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-                <br>
-                <div class="row border-bottom border-left border-right border-white ml-1 " style="width: 98%; ">
-                    <div class="col-lg-12 text-center " id="listedSongs">
-                        No Songs in the list
-                    </div>
-                </div>
             </div>
         </div>
         <br>
