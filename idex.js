@@ -43,7 +43,7 @@ var language = /** @class */ (function () {
 }());
 var playList = /** @class */ (function () {
     function playList() {
-        this.playListSongs = [];
+        // playListSongs: songs[] = [];
         this.languages = [{ name: "Tamil", songs: [vey, mar, life] },
             { name: "English", songs: [fad, lsd] }];
         this.artists = [{ name: "bala", songs: [vey] },
@@ -56,11 +56,11 @@ var playList = /** @class */ (function () {
             { name: "ilayaraja", songs: [mar] },
             { name: "govindvasanth", songs: [life] },
             { name: "sia", songs: [lsd] }];
+        // addSong(son: songs) {
+        //   // console.log(son);
+        //   this.playListSongs.push(son);
+        // }
     }
-    playList.prototype.addSong = function (son) {
-        // console.log(son);
-        this.playListSongs.push(son);
-    };
     return playList;
 }());
 var playLister = new playList();
@@ -87,11 +87,10 @@ var musicDirector = /** @class */ (function () {
     }
     return musicDirector;
 }());
-var album = /** @class */ (function () {
-    function album() {
-    }
-    return album;
-}());
+// class album {
+//   albumName;
+//   songs;
+// }
 var artist;
 function add() {
     var song = new songs();
@@ -223,7 +222,7 @@ function play(obj) {
     document.getElementById("player").innerHTML = "<div class=\"row\">\n    <div class=\"col-lg-12 bg-white border border-white\">\n        <br>\n        <div class=\"row \">\n            <div class=\"col-1 col-lg-3\"></div>\n            <div class=\"col-6 col-lg-6\">\n                <img src=\"record.png\" style=\"height:20rem;width:20rem\" id=\"record\" />\n            </div>\n            <div class=\" col-lg-3\"></div>\n            <br>\n        </div>\n        <br>\n        <div class=\"row bg-dark text-white\">\n            <div class=\"col-lg-12 text-center\">\n                <h1 class=\"text-capitalize text-center\" style=\"font-size:5vw;\">" + obj.songName + "</h1>\n                <p class=\"text-capitalize\">Artists: " + obj.artist + "&emsp;&emsp;Gengre: " + obj.genre + "&emsp;&emsp;Music Director: " + obj.musicDirector + "</p>\n                <h3 class=\"text-capitalize\">Album: " + obj.album + "</h3>\n            </div>\n        </div>\n        <div class=\"row bg-dark\">\n            <div class=\"col-lg-12\">\n                <br>\n                <audio controls autoplay style=\"width: 100%;\">\n                    <source src=" + obj.url + " type=\"audio/ogg\">\n                    <source src=" + obj.url + " type=\"audio/mpeg\">\n                    Your browser does not support the audio element.\n                  </audio>\n                <br><br>\n            </div>\n        </div>\n    </div>\n</div>";
 }
 function changeSelect(types) {
-    type = types;
+    type = String(types);
     var sel = document.getElementById("list");
     sel.innerHTML = "";
     if (playLister[type].length == 0) {

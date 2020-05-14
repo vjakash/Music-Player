@@ -1,4 +1,3 @@
-type playListType = "Tamil" | "English";
 let type="languages";
 let vey={album: "Soorarai potru",
 artist: "bala",
@@ -48,7 +47,7 @@ class language{
     }
 }
 class playList {
-  playListSongs: songs[] = [];
+  // playListSongs: songs[] = [];
   languages:language[]=[{name:"Tamil",songs:[vey,mar,life]},
   {name:"English",songs:[fad,lsd]}];
 
@@ -63,10 +62,10 @@ class playList {
 {name:"ilayaraja",songs:[mar]},
 {name:"govindvasanth",songs:[life]},
 {name:"sia",songs:[lsd]}];
-  addSong(son: songs) {
-    // console.log(son);
-    this.playListSongs.push(son);
-  }
+  // addSong(son: songs) {
+  //   // console.log(son);
+  //   this.playListSongs.push(son);
+  // }
 }
 let playLister=new playList();
 // let tamil = new language("Tamil");
@@ -75,12 +74,12 @@ let playLister=new playList();
 // playLister.languages.push(english);
 class songs {
   songName: String;
-  language;
-  artist;
-  album;
-  url;
-  musicDirector;
-  genre;
+  language:String;
+  artist:String;
+  album:String;
+  url:String;
+  musicDirector:String;
+  genre:String;
 }
 
 class artists {
@@ -97,10 +96,10 @@ class musicDirector {
       this.name = name;
     }
   }
-class album {
-  albumName;
-  songs;
-}
+// class album {
+//   albumName;
+//   songs;
+// }
 
 let artist;
 function add() {
@@ -234,7 +233,7 @@ function updatePlayList() {
 //       break;
 //   }
 }
-function play(obj) {
+function play(obj:songs) {
 // obj=JSON.parse(obj);
     console.log(obj);
   (<HTMLElement>document.getElementById("player")).innerHTML = "";
@@ -271,8 +270,8 @@ function play(obj) {
     </div>
 </div>`;
 }
-function changeSelect(types){
-    type=types;
+function changeSelect(types:String){
+    type=String(types);
     let sel=(<HTMLSelectElement>document.getElementById("list"));
     sel.innerHTML="";
     if(playLister[type].length==0){
