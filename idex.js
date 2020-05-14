@@ -1,6 +1,8 @@
 var playList = /** @class */ (function () {
     function playList(name) {
         this.playListSongs = [];
+        this.artists = [];
+        this.musicDirector = [];
         this.playListName = name;
     }
     playList.prototype.addSong = function (son) {

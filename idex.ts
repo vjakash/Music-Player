@@ -3,6 +3,8 @@ type playListType = "Tamil" | "English";
 class playList {
   playListName: playListType;
   playListSongs: songs[] = [];
+  artists:artists[]=[];
+  musicDirector:musicDirector[]=[];
   constructor(name) {
     this.playListName = name;
   }
